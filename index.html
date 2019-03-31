@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table id="table">
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+    </table>
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        class Brawler {
+            constructor(name, healthList, attackList, maxHits) {
+                this.name = name;
+                this.healthList = healthList;
+                this.attackList = attackList;
+                this.maxHits = maxHits;
+            }
+        }
+        function requiredReloadCountToKill(attacker, attacked) {
+            return Math.ceil(attacked.healthList[9] / (attacker.attackList[9] * attacker.maxHits));
+        }
+
+        let shelly = new Brawler(
+            "Shelly",
+            [3600, 3780, 3960, 4140, 4320, 4500, 4680, 4860, 5040, 5040],
+            [320, 336, 352, 368, 384, 400, 416, 432, 448, 448],
+            5
+        );
+        let jessie = new Brawler(
+            "Jessie",
+            [3200, 3360, 3520, 3680, 3840, 4000, 4160, 4320, 4480, 4480],
+            [820, 861, 902, 943, 984, 1025, 1066, 1107, 1148, 1148],
+            1
+        );
+        let colt = new Brawler(
+            "Colt",
+            [2800, 2940, 3080, 3220, 3360, 3500, 3640, 3780, 3920, 3920],
+            [300, 315, 330, 345, 360, 375, 390, 405, 420, 420],
+            6
+        );
+        let nita = new Brawler(
+            "Nita",
+            [3800, 3990, 4180, 4370, 4560, 4750, 4940, 5130, 5320, 5320],
+            [740, 777, 814, 851, 888, 925, 962, 999, 1036, 1036],
+            1
+        );
+        let bull = new Brawler(
+            "Bull",
+            [5200, 5460, 5720, 5980, 6240, 6500, 6760, 7020, 7280, 7280],
+            [400, 420, 440, 460, 480, 500, 520, 540, 560, 560],
+            5
+        );
+        let bo = new Brawler(
+            "Bo",
+            [3600, 3780, 3960, 4140, 4320, 4500, 4680, 4860, 5040, 5040],
+            [500, 525, 550, 575, 600, 625, 650, 675, 700, 700],
+            3
+        );
+        let dynamike = new Brawler(
+            "Dynamike",
+            [2800, 2940, 3080, 3220, 3360, 3500, 3640, 3780, 3920, 3920],
+            [760, 798, 836, 874, 912, 950, 988, 1026, 1064, 1064],
+            2
+        );
+        let brock = new Brawler(
+            "Brock",
+            [2800, 2940, 3080, 3220, 3360, 3500, 3640, 3780, 3920, 3920],
+            [1100, 1155, 1210, 1265, 1320, 1375, 1430, 1485, 1540, 1540],
+            1
+        );
+        let elprimo = new Brawler(
+            "ElPrimo",
+            [5800, 6090, 6380, 6670, 6960, 7250, 7540, 7830, 8120, 8120],
+            [360, 378, 396, 414, 432, 450, 468, 486, 504, 504],
+            3
+        );
+        let poco = new Brawler(
+            "Poco",
+            [3800, 3990, 4180, 4370, 4560, 4750, 4940, 5130, 5320, 5320],
+            [660, 693, 726, 759, 792, 825, 858, 891, 924, 924],
+            1
+        );
+        let barley = new Brawler(
+            "Barley",
+            [2400, 2520, 2640, 2760, 2880, 3000, 3120, 3240, 3360, 3360],
+            [680, 714, 748, 782, 816, 850, 884, 918, 952, 952],
+            1
+        );
+        let carl = new Brawler(
+            "Carl",
+            [4400, 4620, 4840, 5060, 5280, 5500, 5720, 5940, 6160, 6160],
+            [640, 672, 704, 736, 768, 800, 832, 864, 896, 896],
+            2
+        );
+        let rico = new Brawler(
+            "Rico",
+            [2400, 2520, 2640, 2760, 2880, 3000, 3120, 3240, 3360, 3360],
+            [300, 315, 330, 345, 360, 375, 390, 405, 420, 420],
+            5
+        );
+        let penny = new Brawler(
+            "Penny",
+            [3200, 3360, 3520, 3680, 3840, 4000, 4160, 4320, 4480, 4480],
+            [840, 882, 924, 966, 1008,　1050, 1092, 1134, 1176, 1176],
+            1
+        );
+        let darryl = new Brawler(
+            "Darryl",
+            [4000, 4200, 4400, 4600, 4800, 5000, 5200, 5400, 5600, 5600],
+            [400, 420, 440, 460, 480, 500, 520, 540, 560, 560],
+            4
+        );
+        let piper = new Brawler(
+            "Piper",
+            [2400, 2520, 2640, 2760, 2880, 3000, 3120, 3240, 3360, 3360],
+            [1640, 1722, 1804, 1886, 1968, 2050, 2132, 2214, 2296, 2296],
+            1
+        );
+        let pam = new Brawler(
+            "Pam",
+            [4400, 4620, 4840, 5060, 5280, 5500, 5720, 5940, 6160, 6160],
+            [260, 273, 286, 299, 312, 325, 338, 351, 364, 364],
+            9
+        );
+        let frank = new Brawler(
+            "Frank",
+            [5800, 6090, 6380, 6670, 6960, 7250, 7540, 7830, 8120, 8120],
+            [1200, 1260, 1320, 1380, 1440, 1500, 1560, 1620, 1680, 1680],
+            1
+        );
+        let mortis = new Brawler(
+            "Mortis",
+            [3800, 3990, 4180, 4370, 4560, 4750, 4940, 5130, 5320, 5320],
+            [900, 945, 990, 1035, 1080, 1125, 1170, 1215, 1260, 1260],
+            1
+        );
+        let tara = new Brawler(
+            "Tara",
+            [3200, 3360, 3520, 3680, 3840, 4000, 4160, 4320, 4480, 4480],
+            [800, 840, 880, 920, 960, 1000, 1040, 1080, 1120, 1120],
+            3
+        );
+        let gene = new Brawler(
+            "Gene",
+            [3600, 3780, 3960, 4140, 4320, 4500, 4680, 4860, 5040, 5040],
+            [1000, 1050, 1100, 1150, 1200, 1250, 1300, 1350, 1400, 1400],
+            1
+        );
+        let leon = new Brawler(
+            "Leon",
+            [3200, 3360, 3520, 3680, 3840, 4000, 4160, 4320, 4480, 4480],
+            [440, 462, 484, 506, 528, 550, 572, 594, 616, 616],
+            4
+        );
+        let crow = new Brawler(
+            "Crow",
+            [2400, 2520, 2640, 2760, 2880, 3000, 3120, 3240, 3360, 3360],
+            [280, 294, 308, 322, 336, 350, 364, 378, 392, 392],
+            3
+        );
+        let spike = new Brawler(
+            "Spike",
+            [2400, 2520, 2640, 2760, 2880, 3000, 3120, 3240, 3360, 3360],
+            [480, 504, 528, 552, 576, 600, 624, 648, 672, 672],
+            2
+        );
+
+        let brawlers = [
+            shelly,
+            jessie,
+            colt,
+            nita,
+            bull,
+            bo,
+            dynamike,
+            brock,
+            elprimo,
+            poco,
+            barley,
+            carl,
+            rico,
+            penny,
+            darryl,
+            piper,
+            pam,
+            frank,
+            mortis,
+            tara,
+            gene,
+            leon,
+            crow,
+            spike,
+        ];
+        let table = document.querySelector("#table");
+        let thead = document.querySelector('#thead');
+        let tr = document.createElement('tr');
+        tr.appendChild(document.createElement('th'));
+        for(let i = 0; i < brawlers.length; i++) {
+            let th = document.createElement('th');
+            img = document.createElement("img");
+            img.setAttribute('src', 'brawlers/avatar_'+brawlers[i].name+'.png');
+            img.setAttribute('width', '25');
+            th.appendChild(img);
+            tr.appendChild(th);
+        }
+        thead.appendChild(tr);
+        let tbody = document.querySelector('#tbody');
+        for(let i = 0; i < brawlers.length; i++) {
+            let tr = document.createElement('tr');
+            let td = document.createElement('td');
+            img = document.createElement("img");
+            img.setAttribute('src', 'brawlers/avatar_'+brawlers[i].name+'.png');
+            img.setAttribute('width', '25');
+            td.appendChild(img);
+            tr.appendChild(td);
+            for(let j = 0; j < brawlers.length; j++) {
+                let td = document.createElement('td');
+                td.innerText = requiredReloadCountToKill(brawlers[i], brawlers[j]);
+                td.setAttribute('style', 'text-align:center');
+                tr.appendChild(td);
+            }
+            tbody.appendChild(tr);
+        }
+    };
+</script>
+</html>
